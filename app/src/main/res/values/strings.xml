@@ -5,7 +5,9 @@
     <string name="action_sortpopular">Sort By Most Popular</string>
     <string name="action_sortrated">Sort By High Rated</string>
     <string name="action_favorites">Show only Favorites</string>
-    <string name="api_key">api_key=YOUR API KEY</string>
+    <string name="action_about">About the App</string>
+    <string name="trailerVideo">Trailer Video</string>
+    <string name="api_key">api_key=75154627e6748e84f682342118d3c188</string>
     <string name="movie_main_url">http://api.themoviedb.org/3/discover/movie?</string>
     <string name="popular_url">http://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc</string>
     <string name="top_rate_url">http://api.themoviedb.org/3/movie/top_rated?</string>

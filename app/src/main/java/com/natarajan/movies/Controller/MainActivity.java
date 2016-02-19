@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import com.natarajan.movies.DO.MovieDetailDO;
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements ListFragmentCallb
                 return true;
             case R.id.action_favorites:
                 sortOnFavSelected();
+                return true;
+            case R.id.action_about:
+                Toast.makeText(this,"Movie details from The Movie DB site. Project done for my Udacity Assignment",Toast.LENGTH_LONG).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -13,7 +13,8 @@ public class TrailerDetailsDO {
     public String source;
     public String name;
 
-    //Parceler will generate the No longer do you have to implement the Parcelable interface, the writeToParcel() or createFromParcel() or the public static final CREATOR.
+    //Parceler will generate the code
+    // No longer do you have to implement the Parcelable interface, the writeToParcel() or createFromParcel() or the public static final CREATOR.
 
     public String getSource() {
         return source;

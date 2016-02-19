@@ -43,27 +43,46 @@ public class MovieAdapter extends BaseAdapter {
         return 0;
     }
 
+
+    //declare an inner class for ViewHolder
+
+    static class ViewHolder {
+        ImageView imageView;
+    }
+
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = convertView;
+        //Changed to ViewHolder and Picasso error load as per feedback received
+        ViewHolder holder = new ViewHolder();
 
         //Inflate view if it is null
-        if (view == null) {
-
-            view = inflater.inflate(R.layout.grid_item, null);
-
-            ImageView imageView = (ImageView) view.findViewById(R.id.movie_poster);
+        if (convertView == null) {
+            convertView = inflater.inflate(R.layout.grid_item, null);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.movie_poster);
             MovieDetailDO movie = movieList.get(position);
-            Picasso.with(context).load(movie.getPoster_path()).into(imageView);
+            convertView.setTag(holder);
+
+            Picasso.with(context)
+                    .load(movie.getPoster_path())
+                    //.placeholder(R.drawable.def_pos)
+                    .error(R.drawable.def_pos)
+                    .into(holder.imageView);
 
         } else {
-            ImageView imageView = (ImageView) view.findViewById(R.id.movie_poster);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.movie_poster);
             MovieDetailDO movie = movieList.get(position);
-            Picasso.with(context).load(movie.getPoster_path()).into(imageView);
+            convertView.setTag(holder);
+
+            Picasso.with(context)
+                    .load(movie.getPoster_path())
+                    //.placeholder(R.drawable.def_pos)
+                    .error(R.drawable.def_pos)
+                    .into(holder.imageView);
         }
 
-        return view;
+        return convertView;
     }
 
 }

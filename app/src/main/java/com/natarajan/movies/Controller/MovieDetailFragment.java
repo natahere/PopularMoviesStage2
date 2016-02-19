@@ -108,7 +108,12 @@ public class MovieDetailFragment extends Fragment {
         rootView.setVisibility(View.VISIBLE);
 
         title.setText(movieSelected.getOriginal_title());
-        Picasso.with(getActivity()).load(movieSelected.getPoster_path()).into(poster);
+        //Picasso.with(getActivity()).load(movieSelected.getPoster_path()).into(poster);
+        Picasso.with(getActivity())
+                .load(movieSelected.getPoster_path())
+                //.placeholder(R.drawable.def_pos)
+                .error(R.drawable.def_pos)
+                .into(poster);
         release.setText(movieSelected.getRelease_date());
         rating.setText(movieSelected.getVote_average());
         overView.setText(movieSelected.getOverview());
